@@ -6,16 +6,23 @@ Resolva as duas questões abaixo,. Crie 2 scripts no formato seunome1.sh e seuno
 Este script deverá enviar todos os arquivos modificados para o github. 
 
 Com isso evita-se a necessidade de digitar todos os comando do git sempre que quiser subir um arquivo para o repositorio Github.com
+#!/bin/bash
 
-	#!/bin/bash
+#enviar atualizacoes para o github 
 
-	echo "Entre com a mensagem do commit" /* (git commit -m "comentários das alterações")*/
-	read mensagem
-	do
-	 git add .
-	 git commit -m "$mensagem"
-	 git pull
-	 echo " Os arquivos foram enviados para o github!"
+# 1- Setar seu email e usuario do github
+git config --global user.name "VITORCOLLARES"
+git config --global user.email "vitor.collares@gmail.com"
+
+# 2- Adicionar todos os arquivos criados e atualizados para o github
+git add*
+
+# 3- Comitar
+git commit -m "criado via script"
+
+# 4- Publicar no github
+git push
+echo " Os arquivos foram enviados para o github!"
 
 
 
