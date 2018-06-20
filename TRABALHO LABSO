@@ -1,0 +1,40 @@
+Trabalho AV2 - valor (2,0 pontos)
+
+Resolva as duas questões abaixo,. Crie 2 scripts no formato seunome1.sh e seunome2.sh , coloque no github e envie o link do seu repositório:
+
+1-Crie um script chamado seunome1.sh “mensagem”
+Este script deverá enviar todos os arquivos modificados para o github. 
+
+Com isso evita-se a necessidade de digitar todos os comando do git sempre que quiser subir um arquivo para o repositorio Github.com
+
+	#!/bin/bash
+
+	echo "Entre com a mensagem do commit" /* (git commit -m "comentários das alterações")*/
+	read mensagem
+	do
+	 git add .
+	 git commit -m "$mensagem"
+	 git pull
+	 echo " Os arquivos foram enviados para o github!"
+
+
+
+
+2-Usando estrutura de repetição, faça um script (seunome2.sh) para calcular e exibir quantas
+pastas e quantos arquivos tem na pasta atual.
+
+      #!/bin/bash
+      tudo=0
+      for tudo in $(ls | wc -l)
+      do 
+	 case "$tudo" in
+	    *)
+	       tudo=$(( $tudo + 1 ))
+	       ;; 
+	 esac
+      done
+      echo "Total de arquivos e pastas: $tudo"
+
+
+** quem não enviar no github perde 50% do valor total
+
